@@ -1,4 +1,4 @@
-let numberOfCards,click,card1,card2;
+let numberOfCards,click,card1,card2,numberOfPlays = 0;
 
 function start() {
     numberOfCards = prompt("Olá, esse é o jogo da memória dos parrots.\nPor Favor,digite o número de cartas que deseja para iniciar:\n(Obs.:o número de cartas deve ser um número par de 4 até 14 e digitado com caracteres numéricos)");
@@ -69,14 +69,25 @@ function cardClick(card){
         cardFlip(card);
         click = select;
         card1 = card;
+        numberOfPlays++;
     }else if (click === select){
         cardFlip(card);
         click = undefined;
+        numberOfPlays++;
+        end();
     }else if (click !== select){
         cardFlip(card);
         card2 = card;
         setTimeout(cardUnflip,1000);
         click = undefined;
+        numberOfPlays++;
+    }
+}
+
+function end(){
+    const cardsFlipped = document.querySelectorAll(".flipped");
+    if (cardsFlipped.length === 2*numberOfCards) {
+        alert("Você ganhou em " + numberOfPlays + " jogadas!");
     }
 }
 
