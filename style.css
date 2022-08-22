@@ -9,9 +9,57 @@ h1{
     color:#75B79E;
 }
 
+img{
+    width: 100px;
+    height: 100px;
+}
+
 .header{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 40px;
+    margin-bottom: 47px;
+}
+
+.playmat{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+.card{
+    width: 117px;
+    height: 146px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #A7E9AF;
+    border: 1px solid #99CEA8;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 34px;
+}
+.back{
+    display: none;
+    width: 117px;
+    height: 146px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+@media (max-width:414px){
+    h1{
+        font-size: 36px;
+        text-align: center;
+    }
+    .playmat{
+        flex-direction: column;
+        height: 100%;
+        flex-wrap: nowrap;
+    }
 }
