@@ -32,6 +32,13 @@ img{
 .card{
     width: 117px;
     height: 146px;
+    margin-bottom: 34px;
+    position:relative;
+}
+
+.cardFace{
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,20 +46,25 @@ img{
     border: 1px solid #99CEA8;
     border-radius: 5px;
     box-sizing: border-box;
-    margin-bottom: 34px;
-}
-.back{
-    display: none;
-    width: 117px;
-    height: 146px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    box-sizing: border-box;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: all .5s;
+    transform-style: preserve-3d;
 }
 
-@media (max-width:414px){
+.back{
+    transform: rotateY(180deg);
+}
+
+.front.flipped{
+    transform: rotateY(-180deg);
+}
+
+.back.flipped{
+    transform: rotateY(0deg);
+}
+
+@media (max-width:768px){
     h1{
         font-size: 36px;
         text-align: center;
